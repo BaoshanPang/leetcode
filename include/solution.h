@@ -2,6 +2,7 @@
 #define  LEETCODE_SOLUTION_H
 
 #include <vector>
+#include <string>
 
 using namespace std;;
 
@@ -15,6 +16,7 @@ class Solution {
  public:
   vector<int> twoSum(vector<int>& nums, int target);
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+  int lengthOfLongestSubstring(string s);
 };
 
 #endif

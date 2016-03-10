@@ -15,37 +15,39 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  */
 #include "solution.h"
 
-ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2) {
+ListNode *
+Solution::addTwoNumbers (ListNode * l1, ListNode * l2)
+{
   int carry = 0;
-  ListNode* out = nullptr;
-  ListNode* p = out;
-  while(l1 || l2){
+  ListNode *out = nullptr;
+  ListNode *p = out;
+  while (l1 || l2) {
     int val = 0;
-    if(l1) {
+    if (l1) {
       val += l1->val;
       l1 = l1->next;
     }
-    if(l2) {
+    if (l2) {
       val += l2->val;
       l2 = l2->next;
     }
     val += carry;
-    if(val >= 10) {
+    if (val >= 10) {
       carry = 1;
       val = val - 10;
     } else {
       carry = 0;
     }
-    if(out == nullptr) {
-      out = new ListNode(val);
+    if (out == nullptr) {
+      out = new ListNode (val);
       p = out;
     } else {
-      p->next = new ListNode(val);
+      p->next = new ListNode (val);
       p = p->next;
     }
   }
-  if(carry) {
-    p->next = new ListNode(carry);
+  if (carry) {
+    p->next = new ListNode (carry);
   }
   return out;
 }
