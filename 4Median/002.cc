@@ -13,21 +13,34 @@ Solution::findMedianSortedArrays (vector < int >&nums1, vector < int >&nums2)
   int sz2 = nums2.size ();
   int n = sz1 + sz2;
   int i1 = 0, i2 = 0;
-  int k = n / 2 + 1;
+  int k = n / 2;
   int m = 0;
-  if (sz1 + sz2 == 0)
+  if (n == 0) {
     return 0.0;
+  } else if(sz1 == 0) {
+    if(sz2 & 1){
+      return (double)nums2[sz2/2];
+    } else {
+      return ((double)nums2[sz2/2-1]+(double)nums2[sz2/2])/2;
+    }
+  } else if(sz2 == 0){
+    if(sz1 & 1){
+      return (double)nums1[sz1/2];
+    } else {
+      return ((double)nums1[sz1/2-1]+(double)nums1[sz1/2])/2;
+    }
+  }
   while (1) {
     if ((i1 < sz1) && ((i2 == sz2) || (nums1[i1] < nums2[i2]))) {
       m++;
-      if (m == k) {
+      if (m == k+1) {
 	val = nums1[i1];
 	break;
       }
       i1++;
     } else {
       m++;
-      if (m == k) {
+      if (m == k+1) {
 	val = nums2[i2];
 	break;
       }

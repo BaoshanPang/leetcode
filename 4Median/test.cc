@@ -16,4 +16,10 @@ TEST (findMedianSortedArrays, all)
   nums1 = {};
   nums2 = {};
   EXPECT_EQ (sol.findMedianSortedArrays (nums1, nums2), 0);
+  nums1 = {};
+  nums2 = {1};
+  EXPECT_EQ (sol.findMedianSortedArrays (nums1, nums2), 1);
+  nums1 = {};
+  nums2 = {2,3};
+  EXPECT_EQ (sol.findMedianSortedArrays (nums1, nums2), 2.5);
 }
