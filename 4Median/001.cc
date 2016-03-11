@@ -20,3 +20,5 @@ Solution::findMedianSortedArrays (vector < int >&nums1, vector < int >&nums2)
 	    (double) nums[nums.size () / 2]) / 2;
   }
 }
+
+#include "test.cc"
