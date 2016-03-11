@@ -6,17 +6,22 @@
 
 using namespace std;;
 
-struct ListNode {
+struct ListNode
+{
   int val;
   ListNode *next;
-  ListNode(int x) : val(x), next(nullptr) {}
+    ListNode (int x):val (x), next (nullptr)
+  {
+  }
 };
 
-class Solution {
- public:
-  vector<int> twoSum(vector<int>& nums, int target);
-  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
-  int lengthOfLongestSubstring(string s);
+class Solution
+{
+public:
+  vector < int >twoSum (vector < int >&nums, int target);
+  ListNode *addTwoNumbers (ListNode * l1, ListNode * l2);
+  int lengthOfLongestSubstring (string s);
+  double findMedianSortedArrays (vector < int >&nums1, vector < int >&nums2);
 };
 
 #endif
